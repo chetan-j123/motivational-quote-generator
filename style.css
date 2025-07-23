@@ -34,3 +34,14 @@ button{
 button:hover{
      background-color: #ff4c4c;
 }
+
+@keyframes box-slide{
+  from{
+    transform: translatex(0px);
+  }
+  to{
+    transform: translatex(-1500px);
+  }
+  
+}
+s
