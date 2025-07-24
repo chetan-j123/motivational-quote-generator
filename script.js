@@ -13,8 +13,24 @@ const quotes = [
 
 const quoteBox = document.getElementById("quote");
 const newQuoteBtn = document.getElementById("new-quote");
+const savequotebtn=document.getElementById("save-quote");
+const savedquotelist=document.getElementById("saved-quotes")
+
+let currentquote=""
+
 
 newQuoteBtn.addEventListener("click", () => {
   const randomIndex = Math.floor(Math.random() * quotes.length);
-  quoteBox.textContent = quotes[randomIndex];
+  currentquote=quotes[randomIndex];
+   quoteBox.textContent=currentquote
 });
+
+savequotebtn.addEventListener(
+  "click",()=>{
+    if(currentquote){
+    const listitem=document.createElement("li")
+    listitem.textContent=currentquote
+    savedquotelist.append(listitem)
+    }
+  }
+)
