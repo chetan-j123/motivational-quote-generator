@@ -18,11 +18,15 @@ const savedquotelist=document.getElementById("saved-quotes")
 
 let currentquote=""
 
+const sound=new Audio("quotechangesound.mp3")
+const savesound=new Audio("savesound.mp3")
 
 newQuoteBtn.addEventListener("click", () => {
   const randomIndex = Math.floor(Math.random() * quotes.length);
   currentquote=quotes[randomIndex];
    quoteBox.textContent=currentquote
+   sound.currentTime=0
+   sound.play();
 });
 
 savequotebtn.addEventListener(
@@ -31,6 +35,7 @@ savequotebtn.addEventListener(
     const listitem=document.createElement("li")
     listitem.textContent=currentquote
     savedquotelist.append(listitem)
+       savesound.play();
     }
   }
 )
