@@ -1,10 +1,26 @@
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(120deg, #f6d365, #fda085);
+      
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
+}
+.ww{
+ background: linear-gradient(120deg, #f6d365, #fda085);
+ list{
+  color: black;
+ }
+}
+.yy{
+  background-color: black;
+  .container{
+    color: white;
+    background-color: transparent;
+  }
+  li{
+    color: orchid;
+  }
 }
 .container{
     background-color: aliceblue;
@@ -25,6 +41,8 @@ h1 {
   color: #333;
 }
 button{
+     height: 45px;
+    width: 150px;
     padding: 10px;
     font-size: 16px;
     color: white;
@@ -45,4 +63,8 @@ button:hover{
   }
   
 }
-s
+
+#saved-quotes{
+  list-style-type: square;
+  font-size: 16px;
+} 
