@@ -15,11 +15,25 @@ const quoteBox = document.getElementById("quote");
 const newQuoteBtn = document.getElementById("new-quote");
 const savequotebtn=document.getElementById("save-quote");
 const savedquotelist=document.getElementById("saved-quotes")
+const copyquote=document.getElementById("copyquotebtn")
+const lightbtn=document.getElementById("light")
+const darkbtn=document.getElementById("dark")
 
 let currentquote=""
 
 const sound=new Audio("quotechangesound.mp3")
 const savesound=new Audio("savesound.mp3")
+
+
+darkbtn.addEventListener("change",()=>{
+  document.body.classList.remove("ww")
+document.body.classList.toggle("yy")
+})
+lightbtn.addEventListener("change",()=>{
+  document.body.classList.remove("yy")
+document.body.classList.add("ww")
+})
+document.body.classList.add("ww")//we add as adefault
 
 newQuoteBtn.addEventListener("click", () => {
   const randomIndex = Math.floor(Math.random() * quotes.length);
@@ -39,3 +53,17 @@ savequotebtn.addEventListener(
     }
   }
 )
+
+)
+copyquote.addEventListener("click",()=>{
+  navigator.clipboard.writeText(currentquote)
+  .then(()=>{
+    alert("quote copied to clipboard")
+  })
+  .catch(err=>{
+    alert("failed")
+    console.error("copy error",err)
+  })
+
+
+})
