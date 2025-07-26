@@ -54,7 +54,7 @@ savequotebtn.addEventListener(
   }
 )
 
-)
+
 copyquote.addEventListener("click",()=>{
   navigator.clipboard.writeText(currentquote)
   .then(()=>{
