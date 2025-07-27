@@ -18,13 +18,14 @@ const savedquotelist=document.getElementById("saved-quotes")
 const copyquote=document.getElementById("copyquotebtn")
 const lightbtn=document.getElementById("light")
 const darkbtn=document.getElementById("dark")
+const reader=document.getElementById("readerbtn")
 
 let currentquote=""
 
 const sound=new Audio("quotechangesound.mp3")
 const savesound=new Audio("savesound.mp3")
 
-
+// theme change functionality
 darkbtn.addEventListener("change",()=>{
   document.body.classList.remove("ww")
 document.body.classList.toggle("yy")
@@ -35,6 +36,7 @@ document.body.classList.add("ww")
 })
 document.body.classList.add("ww")//we add as adefault
 
+// new quote function with background music
 newQuoteBtn.addEventListener("click", () => {
   const randomIndex = Math.floor(Math.random() * quotes.length);
   currentquote=quotes[randomIndex];
@@ -43,6 +45,7 @@ newQuoteBtn.addEventListener("click", () => {
    sound.play();
 });
 
+//save quote function
 savequotebtn.addEventListener(
   "click",()=>{
     if(currentquote){
@@ -54,7 +57,7 @@ savequotebtn.addEventListener(
   }
 )
 
-
+// copy quote function
 copyquote.addEventListener("click",()=>{
   navigator.clipboard.writeText(currentquote)
   .then(()=>{
@@ -66,4 +69,12 @@ copyquote.addEventListener("click",()=>{
   })
 
 
+})
+
+// reder  function
+reader.addEventListener("click",()=>{
+const utter=new SpeechSynthesisUtterance(currentquote)
+utter.rate=1
+utter.pitch=1
+speechSynthesis.speak(utter)
 })
