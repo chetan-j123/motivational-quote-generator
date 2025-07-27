@@ -43,6 +43,7 @@ newQuoteBtn.addEventListener("click", () => {
    quoteBox.textContent=currentquote
    sound.currentTime=0
    sound.play();
+  sound.volume=0.2
 });
 
 //save quote function
