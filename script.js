@@ -194,7 +194,7 @@ lightbtn.addEventListener("change",()=>{
   document.body.classList.remove("yy")
 document.body.classList.add("ww")
 })
-document.body.classList.add("ww")//we add as adefault
+document.body.classList.add("yy")//we add as adefault
 
 // new quote function with background music
 newQuoteBtn.addEventListener("click", () => {
