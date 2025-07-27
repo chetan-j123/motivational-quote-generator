@@ -37,7 +37,9 @@ h1 {
 }
 
 #quote-box {
+   border-radius: 25px;
   margin-bottom: 30px;
+  box-shadow: 4px 4px 36px #ff00d4;
   
 }
 
